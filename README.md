@@ -125,7 +125,7 @@ Current total database holdings are summarized here.
 
 -------------------------------------------------------------------------------------------
 
-Classificazione in base allo Redshift delle stelle? 
+Classificazione in base allo Redshift delle stelle
 
 Definire prima cosa è lo Redshift , la formula , poi capire come utilizzarlo per un eventuale classificazione. Trova un database valido , tipo della Nasa , ovviamente. Sito Download  DESI-EDR to Redshift : 
 
@@ -136,16 +136,16 @@ specpod-db--> https://github.com/desihub/specprod-db
 
 oss: Prima di lavorare con il db esegui le seguenti operazioni:
 
-	1.Installa Jupiter notebook , per lavorare direttamente con i file locali
+	1. Installa Jupiter notebook , per lavorare direttamente con i file locali
 
-	2.Configura l'enviroment chiamato env, questo contiene le librerie , puo essere 	legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che 	bisogna stare attenti nel configurazione!!
+	2. Configura l'enviroment chiamato env, questo contiene le librerie , puo essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che bisogna stare attenti nel configurazione!!
 
-	3.Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il 	database. 
+	3. Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
 
 	4. L'Avvio e automatico di Postgres,ma meglio controllare
 	Premi Win + R, digita "services.msc" e premi Invio.
 	Trova il servizio PostgreSQL (es. postgresql-x64-15 o simile).
 	Verifica che il servizio sia in esecuzione. In caso contrario, fai clic con il 	pulsante destro del mouse e seleziona "Start".
 
-	5. Installa librerie particolari per il progetto che servono per collegarti al   	database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy*  	*psycopg2*.
+	5. Installa librerie particolari per il progetto che servono per collegarti al  database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy* e *psycopg2*.
 
