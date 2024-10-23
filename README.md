@@ -183,8 +183,3 @@ Il TESS è un'altra missione NASA dedicata alla scoperta di esopianeti attravers
 
 -------------------------------------------------------------------------------------------
 
-
-
-
-	5. Installa librerie particolari per il progetto che servono per collegarti al  database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy* e *psycopg2*.
-
