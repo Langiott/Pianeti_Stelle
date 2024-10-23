@@ -125,7 +125,7 @@ Current total database holdings are summarized here.
 
 -------------------------------------------------------------------------------------------
 
-Classificazione in base allo Redshift delle stelle
+Classificazione in base allo Redshift delle stelle: 
 
 Definire prima cosa è lo Redshift , la formula , poi capire come utilizzarlo per un eventuale classificazione. Trova un database valido , tipo della Nasa , ovviamente. Sito Download  DESI-EDR to Redshift : 
 
@@ -133,19 +133,58 @@ https://help.desi.lbl.gov/index.php?qa=8&qa_1=accessing-desi-edr-redshift-and-sp
 
 desihub--> sito ufficile per poter trovare materiale
 specpod-db--> https://github.com/desihub/specprod-db
+doc official --> https://specprod-db.readthedocs.io/_/downloads/en/stable/pdf/
 
 oss: Prima di lavorare con il db esegui le seguenti operazioni:
 
-	1. Installa Jupiter notebook , per lavorare direttamente con i file locali
+1.Installa Jupiter notebook , per lavorare direttamente con i file locali
 
-	2. Configura l'enviroment chiamato env, questo contiene le librerie , puo essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che bisogna stare attenti nel configurazione!!
+2.Configura l'enviroment chiamato env, questo contiene le librerie , può essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che 	bisogna stare attenti nel configurazione!!
 
-	3. Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
+3.Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
 
-	4. L'Avvio e automatico di Postgres,ma meglio controllare
-	Premi Win + R, digita "services.msc" e premi Invio.
-	Trova il servizio PostgreSQL (es. postgresql-x64-15 o simile).
-	Verifica che il servizio sia in esecuzione. In caso contrario, fai clic con il 	pulsante destro del mouse e seleziona "Start".
+
+4. Installa librerie particolari per il progetto che servono per collegarti al   database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy*  	*psycopg2*.o simile).
+	
+
+7. git clone  https://github.com/desihub/specprod-db
+8. python setup.py install OPPURE pip install .---> settaggio necessario se no non riesce ad utilizzare moduli che sono contenuti nella cartella del progetto colonato 
+
+9. Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
+
+10. L'Avvio e automatico di Postgres,ma meglio controllare. Non devi creare nessun database ma i codici indicati di sotto posso essere utili 
+
+- psql -U your_username ->controlla quali db sono stati creati dall'utente username
+- \l
+- createdb -U your_username specprod-db
+- db_url = 'postgresql://your_username:your_password@localhost:5432/specprod-db'
+- sudo systemctl status postgresql
+- sudo systemctl start postgresql
+- netstat -an | grep 5432
+
+Premi Win + R, digita "services.msc" e premi Invio.
+Trova il Drive Service PostgreSQL (es. postgresql-x64-15.8-2 o simile).
+Verifica che il servizio sia in esecuzione. In caso contrario, fai clic con il 	pulsante destro del mouse e seleziona "Start".
+
+-------------------------------------------------------------------------------------------
+Sloan Digital Sky Survey (SDSS)-> https://skyserver.sdss.org/dr18
+
+NasaExoplanetArchive --> https://pypi.org/project/exoplanet/
+
+How open Exoplanet Cataloge -->https://github.com/OpenExoplanetCatalogue/open_exoplanet_catalogue
+
+Example to Exoplanet to fits model  --> https://gallery.exoplanet.codes/
+
+SIMBAD è un altro database molto utile per la ricerca di oggetti astronomici, incluse stelle, galassie, e talvolta pianeti. Puoi cercare specifici oggetti o tipi di oggetti.
+
+Il Gaia Mission dell'ESA fornisce dati molto dettagliati sulla posizione e sulle caratteristiche di molte stelle. 
+
+Il TESS è un'altra missione NASA dedicata alla scoperta di esopianeti attraverso il metodo del transito.
+
+-------------------------------------------------------------------------------------------
+
+
+
 
 	5. Installa librerie particolari per il progetto che servono per collegarti al  database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy* e *psycopg2*.
 
