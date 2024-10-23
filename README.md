@@ -1,4 +1,4 @@
-# Pianeti_-_Stelle
+# Pianeti_Stelle
 Si classificano stelle e pianeti nel tentativo di trovare tecniche di analisi di database specifici. In futuro si implementa una rete neurale per l'estrazione delle features e addestramento.
 Come hanno realizzare la prima immagine del buco nero M87? 
 
