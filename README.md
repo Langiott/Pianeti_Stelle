@@ -1,5 +1,5 @@
 # M87 e Pianeti e Stelle
-![Campi di Studio](./Screenshot 2025-04-09 172155.png)
+![Campi di Studio](/Screenshot 2025-04-09 172131.png)
 
 Mi sono appassionato ai buchi neri dopo aver letto due libri che mi hanno completamente catturato: "The Science of Interstellar" di Kip Thorne, e "Luce dal nulla. L’immagine del buco nero e la nascita dell’astronomia del futuro" di Heino Falcke. Queste letture mi hanno aperto gli occhi su quanto la fisica dei buchi neri sia affascinante, ma anche profondamente legata alla nostra capacità di osservare l’universo in modi nuovi.
 
