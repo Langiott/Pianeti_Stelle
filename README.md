@@ -1,4 +1,12 @@
-# Pianeti_Stelle
+#M87
+![Campi di Studio](/1.jpg)
+
+
+
+
+
+
+## Pianeti_Stelle-Informazioni generali 
 Si classificano stelle e pianeti nel tentativo di trovare tecniche di analisi di database specifici. In futuro si implementa una rete neurale per l'estrazione delle features e addestramento.
 Come hanno realizzare la prima immagine del buco nero M87? 
 
