@@ -1,5 +1,5 @@
 # M87 e Pianeti e Stelle
-![Campi di Studio](/Screenshot 2025-04-09 172155.png.jpg)
+![Campi di Studio](/Screenshot 2025-04-09 172155.png)
 
 
 
