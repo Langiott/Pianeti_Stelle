@@ -1,0 +1,42 @@
+[
+  {
+    "value": "10.25739/g85n-f134",
+    "key": "DOI"
+  },
+  {
+    "value": "The Event Horizon Telescope Collaboration",
+    "key": "Creator"
+  },
+  {
+    "value": "First M87 EHT Results: Calibrated Data",
+    "key": "Title"
+  },
+  {
+    "value": "CyVerse Data Commons",
+    "key": "Publisher"
+  },
+  {
+    "value": "2019",
+    "key": "Publication Year"
+  },
+  {
+    "value": "We release a data set to accompany the First M87 Event Horizon Telescope Results paper series (EHT Collaboration et al. 2019a,b,c,d,e,f, see the README.md file for full references). The data set is derived from the Science Release 1 (SR1) of the Event Horizon Telescope (EHT)'s April 2017 observation campaign (EHT Collaboration et al. 2019c).  This data set contains M87 data for both low and high bands for all observed days (April 5th, 6th, 10th, 11th, 2017). Data from the 2017 observations were processed through three independent reduction pipelines (Blackburn et al. 2019, Janssen et al. 2019, Paper III). This release includes the fringe fitted, a-priori calibrated, and network calibrated data from the EHT-HOPS pipeline, which is the primary data set for the First M87 EHT results. Independent flux calibration is performed based on estimated station sensitvities during the campaign (Issaoun et al. 2017, Janssen et al. 2019). A description of the data properties, their validation, and estimated systematic errors is given in Paper III with additional details in Wielgus et al. (2019).  The data are time averaged to 10 seconds and frequency averaged over all 32 intermediate frequencies (IFs). All polarization information is explicitly removed. To make the resulting uvfits files compatible with popular very-long-baseline interferometry (VLBI) software packages, the circularly polarized cross-hand visibilities RL and LR are set to zero along with their errors, while parallel-hands RR and LL are both set to an estimated Stokes I value. Measurement errors for RR and LL are each set to sqrt(2) times the statistical errors for Stokes I.",
+    "key": "Description"
+  },
+  {
+    "value": "Very-Long-Baseline Interferometry (VLBI), Black Hole, Astronomy",
+    "key": "Subject"
+  },
+  {
+    "value": "data: ODC PDDL, code: GPLv3",
+    "key": "Rights"
+  },
+  {
+    "value": "Very-long-baseline interferometry (VLBI) Visibility Data",
+    "key": "resourceType"
+  },
+  {
+    "value": "2019-D01-01",
+    "key": "ehtDataProductCode"
+  }
+]
