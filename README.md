@@ -1,5 +1,6 @@
 # M87 e Pianeti e Stelle
-![Campi di Studio](/Screenshot 2025-04-09 172155.png)
+![Campi di Studio](./Screenshot 2025-04-09 172155.png)
+
 Mi sono appassionato ai buchi neri dopo aver letto due libri che mi hanno completamente catturato: "The Science of Interstellar" di Kip Thorne, e "Luce dal nulla. L’immagine del buco nero e la nascita dell’astronomia del futuro" di Heino Falcke. Queste letture mi hanno aperto gli occhi su quanto la fisica dei buchi neri sia affascinante, ma anche profondamente legata alla nostra capacità di osservare l’universo in modi nuovi.
 
 Kip Thorne è un fisico teorico statunitense, vincitore del Premio Nobel per la Fisica nel 2017 per il suo lavoro sulle onde gravitazionali con LIGO, e consulente scientifico per il film Interstellar. Con uno stile chiaro e immaginifico, ha saputo raccontare concetti estremamente complessi come i wormhole, la relatività generale e l’orizzonte degli eventi, rendendoli accessibili anche ai non addetti ai lavori.
