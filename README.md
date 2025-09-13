@@ -183,10 +183,11 @@ Definire prima cosa è lo Redshift , la formula , poi capire come utilizzarlo pe
 - desihub--> sito ufficile per poter trovare materiale
 - specpod-db--> https://github.com/desihub/specprod-db
 - doc official --> https://specprod-db.readthedocs.io/_/downloads/en/stable/pdf/
-oss: Prima di lavorare con il db esegui le seguenti operazioni:
-1.Installa Jupiter notebook , per lavorare direttamente con i file locali
-2.Configura l'enviroment chiamato env, questo contiene le librerie , può essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che 	bisogna stare attenti nel configurazione!!
-3.Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
+  
+Oss: Prima di lavorare con il db esegui le seguenti operazioni:
+1. Installa Jupiter notebook , per lavorare direttamente con i file locali
+2. Configura l'enviroment chiamato env, questo contiene le librerie , può essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che 	bisogna stare attenti nel configurazione!!
+3. Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
 4. Installa librerie particolari per il progetto che servono per collegarti al   database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy*  	*psycopg2*.o simile).
 5. git clone  https://github.com/desihub/specprod-db
 6. python setup.py install OPPURE pip install .---> settaggio necessario se no non riesce ad utilizzare moduli che sono contenuti nella cartella del progetto colonato 
