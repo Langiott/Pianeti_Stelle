@@ -13,19 +13,20 @@ Per eseguire il progetto è necessario installare alcune librerie scientifiche f
 
 Il mio obiettivo non è solo tecnico, ma anche divulgativo: mostrare come, con strumenti open source e dati pubblici, sia possibile riavvicinarsi a una delle più grandi imprese scientifiche degli ultimi decenni, e farlo in modo trasparente, accessibile e ripetibile.
 
-## MY_WORK_M87
+# MY WORK M87 - Ricostruzione Immagine Radioastronomica di M87 da dati UVFITS
 
-# 📡 Ricostruzione Immagine Radioastronomica di M87 da dati UVFITS
+![Testo alternativo](/M87.png)
 
-# 🔎 Descrizione generale
+
+## 🔎 Descrizione generale
 Questo notebook esegue la **ricostruzione di un’immagine astronomica reale** del buco nero di M87 a partire da dati interferometrici contenuti in un file **UVFITS**.  
-I dati derivano da osservazioni VLBI (Very Long Baseline Interferometry), dove più radiotelescopi distribuiti sulla Terra osservano simultaneamente la stessa sorgente celeste.  
+I dati derivano da osservazioni VLBI (Very Long Baseline Interferometry), dove più radiotelescopi distribuiti sulla Terra osservano simultaneamente la stessa sorgente celeste. Vedi la cartella /MY_WORK_M87.
 
 L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia trasformata di Fourier dei segnali ricevuti) alla **ricostruzione spaziale** (immagine dell’oggetto celeste).
 
 ---
 
-# ⚙️ Workflow
+## ⚙️ Workflow
 1. **Caricamento dati UVFITS**  
    - Utilizza `astropy.io.fits` per aprire il file `hops_lo_3601_M87+zbl-dtcal_selfcal.uvfits`.  
    - Estrae le colonne `UU---SIN`, `VV---SIN` (coordinate spaziali normalizzate) e `DATA` (visibilità complesse: Re, Im, Peso).
@@ -54,7 +55,7 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 
 ---
 
-# 📦 Librerie utilizzate
+## 📦 Librerie utilizzate
 - **[Astropy](https://www.astropy.org/)** → lettura file FITS/UVFITS.  
 - **[NumPy](https://numpy.org/)** → gestione array numerici e operazioni vettoriali.  
 - **[SciPy](https://scipy.org/)** → interpolazione (`griddata`), trasformate di Fourier, zoom bicubico.  
@@ -62,7 +63,7 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 
 ---
 
-# 🔬 Metodologie e approcci
+## 🔬 Metodologie e approcci
 - **Interferometria radio**: le visibilità complesse rappresentano i campioni della trasformata di Fourier dell’immagine celeste.  
 - **Media pesata**: migliora il rapporto segnale/rumore integrando correttamente più canali.  
 - **Filtraggio baseline**: elimina contributi indesiderati da misure a bassa risoluzione angolare.  
@@ -72,7 +73,7 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 
 ---
 
-# 📊 Output attesi
+## 📊 Output attesi
 - Range delle baseline in unità di lunghezza d’onda.  
 - Visualizzazione del piano u-v interpolato.  
 - Ricostruzione dell’immagine di M87 (scala logaritmica consigliata per contrastare le forti dinamiche).  
@@ -80,7 +81,7 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 
 ---
 
-# 🚀 Possibili estensioni
+## 🚀 Possibili estensioni
 - Applicazione di algoritmi avanzati di **deconvoluzione CLEAN**.  
 - Ricostruzione con **algoritmi regolarizzati** (es. Maximum Entropy, RML imaging).  
 - Analisi comparativa con altre frequenze / dataset.  
@@ -88,7 +89,7 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 
 ---
 
-# 📂 Struttura notebook
+## 📂 Struttura notebook
 - **Sezione 1:** Import librerie e caricamento dati  
 - **Sezione 2:** Pre-elaborazione delle visibilità  
 - **Sezione 3:** Interpolazione e trasformata inversa  
