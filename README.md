@@ -13,6 +13,8 @@ Per eseguire il progetto è necessario installare alcune librerie scientifiche f
 
 Il mio obiettivo non è solo tecnico, ma anche divulgativo: mostrare come, con strumenti open source e dati pubblici, sia possibile riavvicinarsi a una delle più grandi imprese scientifiche degli ultimi decenni, e farlo in modo trasparente, accessibile e ripetibile.
 
+---
+
 # MY WORK M87 - Ricostruzione Immagine Radioastronomica di M87 da dati UVFITS
 
 ![Testo alternativo](/M87.png)
@@ -24,7 +26,6 @@ I dati derivano da osservazioni VLBI (Very Long Baseline Interferometry), dove p
 
 L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia trasformata di Fourier dei segnali ricevuti) alla **ricostruzione spaziale** (immagine dell’oggetto celeste).
 
----
 
 ## ⚙️ Workflow
 1. **Caricamento dati UVFITS**  
@@ -53,7 +54,7 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
    - Uso di interpolazione bicubica (`scipy.ndimage.zoom`) per aumentare la risoluzione visiva.  
    - Visualizzazione con `matplotlib` e colormap **inferno**, adatta per imaging astronomico.
 
----
+
 
 ## 📦 Librerie utilizzate
 - **[Astropy](https://www.astropy.org/)** → lettura file FITS/UVFITS.  
@@ -61,7 +62,6 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 - **[SciPy](https://scipy.org/)** → interpolazione (`griddata`), trasformate di Fourier, zoom bicubico.  
 - **[Matplotlib](https://matplotlib.org/)** → grafici e visualizzazione immagini.
 
----
 
 ## 🔬 Metodologie e approcci
 - **Interferometria radio**: le visibilità complesse rappresentano i campioni della trasformata di Fourier dell’immagine celeste.  
@@ -71,7 +71,6 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 - **FFT inversa**: permette di passare dal piano u-v (Fourier) al piano immagine.  
 - **Upscaling bicubico**: utile per la presentazione, senza introdurre nuova informazione scientifica.  
 
----
 
 ## 📊 Output attesi
 - Range delle baseline in unità di lunghezza d’onda.  
@@ -79,7 +78,6 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 - Ricostruzione dell’immagine di M87 (scala logaritmica consigliata per contrastare le forti dinamiche).  
 - Zoom ad alta risoluzione per evidenziare i dettagli.  
 
----
 
 ## 🚀 Possibili estensioni
 - Applicazione di algoritmi avanzati di **deconvoluzione CLEAN**.  
@@ -88,14 +86,6 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 - Automazione della pipeline per più UVFITS.  
 
 ---
-
-## 📂 Struttura notebook
-- **Sezione 1:** Import librerie e caricamento dati  
-- **Sezione 2:** Pre-elaborazione delle visibilità  
-- **Sezione 3:** Interpolazione e trasformata inversa  
-- **Sezione 4:** Visualizzazione e zoom  
-- **Sezione 5:** Versione migliorata (funzioni modulari)  
-
 
 # Pianeti_Stelle-Informazioni generali 
 Si classificano stelle e pianeti nel tentativo di trovare tecniche di analisi di database specifici. In futuro si implementa una rete neurale per l'estrazione delle features e addestramento.
