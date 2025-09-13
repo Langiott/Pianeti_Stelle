@@ -13,7 +13,90 @@ Per eseguire il progetto è necessario installare alcune librerie scientifiche f
 
 Il mio obiettivo non è solo tecnico, ma anche divulgativo: mostrare come, con strumenti open source e dati pubblici, sia possibile riavvicinarsi a una delle più grandi imprese scientifiche degli ultimi decenni, e farlo in modo trasparente, accessibile e ripetibile.
 
-## Pianeti_Stelle-Informazioni generali 
+## MY_WORK_M87
+
+# 📡 Ricostruzione Immagine Radioastronomica di M87 da dati UVFITS
+
+# 🔎 Descrizione generale
+Questo notebook esegue la **ricostruzione di un’immagine astronomica reale** del buco nero di M87 a partire da dati interferometrici contenuti in un file **UVFITS**.  
+I dati derivano da osservazioni VLBI (Very Long Baseline Interferometry), dove più radiotelescopi distribuiti sulla Terra osservano simultaneamente la stessa sorgente celeste.  
+
+L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia trasformata di Fourier dei segnali ricevuti) alla **ricostruzione spaziale** (immagine dell’oggetto celeste).
+
+---
+
+# ⚙️ Workflow
+1. **Caricamento dati UVFITS**  
+   - Utilizza `astropy.io.fits` per aprire il file `hops_lo_3601_M87+zbl-dtcal_selfcal.uvfits`.  
+   - Estrae le colonne `UU---SIN`, `VV---SIN` (coordinate spaziali normalizzate) e `DATA` (visibilità complesse: Re, Im, Peso).
+
+2. **Pre-elaborazione delle visibilità**
+   - Separazione delle componenti reali e immaginarie.  
+   - Media pesata sui canali, sfruttando i pesi (`WEIGHT`) per aumentare la robustezza.  
+   - Pulizia dei dati: rimozione di valori NaN o con peso nullo.
+
+3. **Filtraggio delle baseline**
+   - Conversione delle coordinate u,v in unità di lunghezza d’onda (`lambda`).  
+   - Eliminazione delle baseline corte (< 5 Mλ), che tendono ad aggiungere rumore e artefatti all’immagine.
+
+4. **Interpolazione sul piano u-v**
+   - Grigliatura delle visibilità su una mesh regolare con `scipy.interpolate.griddata`.  
+   - Scelta del metodo lineare con riempimento dei valori mancanti a 0.
+
+5. **Trasformata di Fourier inversa (IFFT)**
+   - Applicazione della trasformata inversa 2D per ottenere l’immagine nel dominio spaziale.  
+   - Shift delle componenti con `fftshift` per una corretta centratura.  
+   - Normalizzazione dell’intensità.
+
+6. **Upscaling e visualizzazione**
+   - Uso di interpolazione bicubica (`scipy.ndimage.zoom`) per aumentare la risoluzione visiva.  
+   - Visualizzazione con `matplotlib` e colormap **inferno**, adatta per imaging astronomico.
+
+---
+
+# 📦 Librerie utilizzate
+- **[Astropy](https://www.astropy.org/)** → lettura file FITS/UVFITS.  
+- **[NumPy](https://numpy.org/)** → gestione array numerici e operazioni vettoriali.  
+- **[SciPy](https://scipy.org/)** → interpolazione (`griddata`), trasformate di Fourier, zoom bicubico.  
+- **[Matplotlib](https://matplotlib.org/)** → grafici e visualizzazione immagini.
+
+---
+
+# 🔬 Metodologie e approcci
+- **Interferometria radio**: le visibilità complesse rappresentano i campioni della trasformata di Fourier dell’immagine celeste.  
+- **Media pesata**: migliora il rapporto segnale/rumore integrando correttamente più canali.  
+- **Filtraggio baseline**: elimina contributi indesiderati da misure a bassa risoluzione angolare.  
+- **Interpolazione su griglia**: necessaria per applicare la IFFT, dato che i dati osservativi sono irregolarmente campionati.  
+- **FFT inversa**: permette di passare dal piano u-v (Fourier) al piano immagine.  
+- **Upscaling bicubico**: utile per la presentazione, senza introdurre nuova informazione scientifica.  
+
+---
+
+# 📊 Output attesi
+- Range delle baseline in unità di lunghezza d’onda.  
+- Visualizzazione del piano u-v interpolato.  
+- Ricostruzione dell’immagine di M87 (scala logaritmica consigliata per contrastare le forti dinamiche).  
+- Zoom ad alta risoluzione per evidenziare i dettagli.  
+
+---
+
+# 🚀 Possibili estensioni
+- Applicazione di algoritmi avanzati di **deconvoluzione CLEAN**.  
+- Ricostruzione con **algoritmi regolarizzati** (es. Maximum Entropy, RML imaging).  
+- Analisi comparativa con altre frequenze / dataset.  
+- Automazione della pipeline per più UVFITS.  
+
+---
+
+# 📂 Struttura notebook
+- **Sezione 1:** Import librerie e caricamento dati  
+- **Sezione 2:** Pre-elaborazione delle visibilità  
+- **Sezione 3:** Interpolazione e trasformata inversa  
+- **Sezione 4:** Visualizzazione e zoom  
+- **Sezione 5:** Versione migliorata (funzioni modulari)  
+
+
+# Pianeti_Stelle-Informazioni generali 
 Si classificano stelle e pianeti nel tentativo di trovare tecniche di analisi di database specifici. In futuro si implementa una rete neurale per l'estrazione delle features e addestramento.
 Come hanno realizzare la prima immagine del buco nero M87? 
 
