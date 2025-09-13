@@ -112,7 +112,7 @@ Le tecniche computazionali sono state fondamentali anche per affrontare sfide co
 
 ---------------------------------------------------------------------------------------
 
-Analisi Spettrale della Luce Riflessa: 
+# Analisi Spettrale della Luce Riflessa: 
 
 I pianeti riflettono la luce in determinate lunghezze d’onda che possono essere analizzate per identificare la composizione chimica. Ogni elemento chimico ha un "impronta digitale" nel suo spettro di assorbimento, visibile in immagini spettrografiche.
 
@@ -123,7 +123,7 @@ Elaborazione dell'Immagine (Feature Extraction): Usa librerie come OpenCV per l'
 ---------------------------------------------------------------------------------------
 
 
-Spettroscopia Simulata (Opzionale):
+# Spettroscopia Simulata (Opzionale):
 
  Se si desidera aggiungere un livello realistico, è possibile usare tecniche di spettroscopia simulata per mappare l'intensità della luce a varie lunghezze d’onda e associare queste informazioni con specifiche firme spettrali di materiali noti (come acqua, metano, ecc.). L’uso di strumenti come pandas e scikit-learn per modelli di regressione potrebbe essere utile per analizzare questi dati.
 
@@ -160,55 +160,52 @@ https://amslaurea.unibo.it/19482/1/Classificazione_spettrale_delle_stelle_Prandi
 
 -----------------------------------------------------------------------------------------
 
+# Dati Spettrali
 Ecco una tabella dei dati spettrali degli elementi della tavola periodica che può esserti utile:
 
-Atomic Spectra: Un sito web, Atomic Spectra, fornisce informazioni dettagliate sulle spettri atomici degli elementi. Ogni elemento produce uno spettro unico quando viene eccitato, mostrando linee spettrali a specifiche lunghezze d'onda. La tabella interattiva presenta dati visivi e informazioni sulle lunghezze d'onda associate a ciascun elemento​(
+- Atomic Spectra: Un sito web, Atomic Spectra, fornisce informazioni dettagliate sulle spettri atomici degli elementi. Ogni elemento produce uno spettro unico quando viene eccitato, mostrando linee spettrali a specifiche lunghezze d'onda. La tabella interattiva presenta dati visivi e informazioni sulle lunghezze d'onda associate a ciascun elemento​(
 Atomic Spectra
 ).
 
-WebElements: Un altro sito utile è WebElements, che offre una galleria di spettri atomici degli elementi. Qui puoi esplorare gli spettri di emissione e assorbimento, con collegamenti a immagini e dati sulle lunghezze d'onda. Ogni elemento è presentato con dettagli sui suoi spettri e la loro interpretazione​(
+- WebElements: Un altro sito utile è WebElements, che offre una galleria di spettri atomici degli elementi. Qui puoi esplorare gli spettri di emissione e assorbimento, con collegamenti a immagini e dati sulle lunghezze d'onda. Ogni elemento è presentato con dettagli sui suoi spettri e la loro interpretazione​(
 WebElements
 ).
 
-NIST Atomic Spectra Database: Il database NIST è una risorsa importante per dati spettroscopici, che raccoglie informazioni da varie fonti. Puoi accedere ai dati spettrali di ogni elemento, inclusi i livelli energetici e le lunghezze d'onda delle transizioni elettroniche.
+- NIST Atomic Spectra Database: Il database NIST è una risorsa importante per dati spettroscopici, che raccoglie informazioni da varie fonti. Puoi accedere ai dati spettrali di ogni elemento, inclusi i livelli energetici e le lunghezze d'onda delle transizioni elettroniche.
 
 -----------------------------------------------------------------------------------------
-https://openexoplanetcatalogue.com/
+# Dataset utili: 
 
-L'Open Exoplanet Catalogue è un catalogo di tutti i pianeti extrasolari scoperti. Si tratta di un nuovo tipo di database astronomico. È decentralizzato e completamente aperto. Accogliamo con favore contributi e correzioni sia da astronomi professionisti che dal pubblico in generale.
+- https://openexoplanetcatalogue.com/ L'Open Exoplanet Catalogue è un catalogo di tutti i pianeti extrasolari scoperti. Si tratta di un nuovo tipo di database astronomico. È decentralizzato e completamente aperto. Accogliamo con favore contributi e correzioni sia da astronomi professionisti che dal pubblico in generale.
 
-------------------------------------------------------------------------------------------
-Dataset delle stelle :STAR_DATASET_2024.csv
+- STAR_DATASET_2024.csv; https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=STELLARHOSTS; Puoi filtrre direttamente su sito. 
 
-https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=STELLARHOSTS
+- https://ned.ipac.caltech.edu/
 
-OSS:Puoi filtrre direttamente su sito. 
-
--------------------------------------------------------------------------------------------
-
-https://ned.ipac.caltech.edu/
-
-Database Contents:
-
--The Dark Energy Spectroscopic Instrument Early Data Release (DESI-EDR; DESI Collaboration, 2024) catalog has been integrated into 	NED,including positions, object types (galaxy, star, QSO) and redshift information for 1.85 million unique objects.
-
--254K new object links (pointers) were added from over 2K new references.
-
--2M sources from the literature were cross-identified with NED objects.
-
-- 639K new objects were added into the database.
-
-- 2M new redshift measurements were added (mostly from DESI-EDR), including data for 1.7 million objects that previously had no redshift.
+- The Dark Energy Spectroscopic Instrument Early Data Release (DESI-EDR; DESI Collaboration, 2024) catalog has been integrated into 	NED,including positions, object types (galaxy, star, QSO) and redshift information for 1.85 million unique objects.254K new object links (pointers) were added from over 2K new references.2M sources from the literature were cross-identified with NED objects. 639K new objects were added into the database.2M new redshift measurements were added (mostly from DESI-EDR), including data for 1.7 million objects that previously had no redshift.
 Current total database holdings are summarized here.
 
+- Sloan Digital Sky Survey (SDSS)-> https://skyserver.sdss.org/dr18
+
+- NasaExoplanetArchive --> https://pypi.org/project/exoplanet/
+
+- How open Exoplanet Cataloge -->https://github.com/OpenExoplanetCatalogue/open_exoplanet_catalogue
+
+- Example to Exoplanet to fits model  --> https://gallery.exoplanet.codes/
+
+- SIMBAD è un altro database molto utile per la ricerca di oggetti astronomici, incluse stelle, galassie, e talvolta pianeti. Puoi cercare specifici oggetti o tipi di oggetti.
+
+- Il Gaia Mission dell'ESA fornisce dati molto dettagliati sulla posizione e sulle caratteristiche di molte stelle. 
+
+- Il TESS è un'altra missione NASA dedicata alla scoperta di esopianeti attraverso il metodo del transito.
+
 -------------------------------------------------------------------------------------------
 
-Classificazione in base allo Redshift delle stelle: 
+# Classificazione in base allo Redshift delle stelle: 
 
 Definire prima cosa è lo Redshift , la formula , poi capire come utilizzarlo per un eventuale classificazione. Trova un database valido , tipo della Nasa , ovviamente. Sito Download  DESI-EDR to Redshift : 
 
 https://help.desi.lbl.gov/index.php?qa=8&qa_1=accessing-desi-edr-redshift-and-spectra-using-list-of-and-dec , devi inscriverti su troppi siti del cazzoo.
-
 desihub--> sito ufficile per poter trovare materiale
 specpod-db--> https://github.com/desihub/specprod-db
 doc official --> https://specprod-db.readthedocs.io/_/downloads/en/stable/pdf/
@@ -216,22 +213,13 @@ doc official --> https://specprod-db.readthedocs.io/_/downloads/en/stable/pdf/
 oss: Prima di lavorare con il db esegui le seguenti operazioni:
 
 1.Installa Jupiter notebook , per lavorare direttamente con i file locali
-
 2.Configura l'enviroment chiamato env, questo contiene le librerie , può essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che 	bisogna stare attenti nel configurazione!!
-
 3.Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
-
-
 4. Installa librerie particolari per il progetto che servono per collegarti al   database PostgreSQL direttamente da JupyterLab con Python, utilizzando *sqlalchemy*  	*psycopg2*.o simile).
-	
-
-7. git clone  https://github.com/desihub/specprod-db
-8. python setup.py install OPPURE pip install .---> settaggio necessario se no non riesce ad utilizzare moduli che sono contenuti nella cartella del progetto colonato 
-
-9. Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
-
-10. L'Avvio e automatico di Postgres,ma meglio controllare. Non devi creare nessun database ma i codici indicati di sotto posso essere utili 
-
+5. git clone  https://github.com/desihub/specprod-db
+6. python setup.py install OPPURE pip install .---> settaggio necessario se no non riesce ad utilizzare moduli che sono contenuti nella cartella del progetto colonato 
+7. Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
+8. L'Avvio e automatico di Postgres,ma meglio controllare. Non devi creare nessun database ma i codici indicati di sotto posso essere utili 
 - psql -U your_username ->controlla quali db sono stati creati dall'utente username
 - \l
 - createdb -U your_username specprod-db
@@ -243,21 +231,4 @@ oss: Prima di lavorare con il db esegui le seguenti operazioni:
 Premi Win + R, digita "services.msc" e premi Invio.
 Trova il Drive Service PostgreSQL (es. postgresql-x64-15.8-2 o simile).
 Verifica che il servizio sia in esecuzione. In caso contrario, fai clic con il 	pulsante destro del mouse e seleziona "Start".
-
--------------------------------------------------------------------------------------------
-Sloan Digital Sky Survey (SDSS)-> https://skyserver.sdss.org/dr18
-
-NasaExoplanetArchive --> https://pypi.org/project/exoplanet/
-
-How open Exoplanet Cataloge -->https://github.com/OpenExoplanetCatalogue/open_exoplanet_catalogue
-
-Example to Exoplanet to fits model  --> https://gallery.exoplanet.codes/
-
-SIMBAD è un altro database molto utile per la ricerca di oggetti astronomici, incluse stelle, galassie, e talvolta pianeti. Puoi cercare specifici oggetti o tipi di oggetti.
-
-Il Gaia Mission dell'ESA fornisce dati molto dettagliati sulla posizione e sulle caratteristiche di molte stelle. 
-
-Il TESS è un'altra missione NASA dedicata alla scoperta di esopianeti attraverso il metodo del transito.
-
--------------------------------------------------------------------------------------------
 
