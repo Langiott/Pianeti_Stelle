@@ -16,16 +16,10 @@ Il mio obiettivo non è solo tecnico, ma anche divulgativo: mostrare come, con s
 ---
 
 # MY WORK M87 - Ricostruzione Immagine Radioastronomica di M87 da dati UVFITS
-
 ![Testo alternativo](/M87.png)
-
-
 ## 🔎 Descrizione generale
 Questo notebook esegue la **ricostruzione di un’immagine astronomica reale** del buco nero di M87 a partire da dati interferometrici contenuti in un file **UVFITS**.  
-I dati derivano da osservazioni VLBI (Very Long Baseline Interferometry), dove più radiotelescopi distribuiti sulla Terra osservano simultaneamente la stessa sorgente celeste. Vedi la cartella /MY_WORK_M87.
-
-L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia trasformata di Fourier dei segnali ricevuti) alla **ricostruzione spaziale** (immagine dell’oggetto celeste).
-
+I dati derivano da osservazioni VLBI (Very Long Baseline Interferometry), dove più radiotelescopi distribuiti sulla Terra osservano simultaneamente la stessa sorgente celeste. Vedi la cartella /MY_WORK_M87. L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia trasformata di Fourier dei segnali ricevuti) alla **ricostruzione spaziale** (immagine dell’oggetto celeste).
 
 ## ⚙️ Workflow
 1. **Caricamento dati UVFITS**  
@@ -54,14 +48,11 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
    - Uso di interpolazione bicubica (`scipy.ndimage.zoom`) per aumentare la risoluzione visiva.  
    - Visualizzazione con `matplotlib` e colormap **inferno**, adatta per imaging astronomico.
 
-
-
 ## 📦 Librerie utilizzate
 - **[Astropy](https://www.astropy.org/)** → lettura file FITS/UVFITS.  
 - **[NumPy](https://numpy.org/)** → gestione array numerici e operazioni vettoriali.  
 - **[SciPy](https://scipy.org/)** → interpolazione (`griddata`), trasformate di Fourier, zoom bicubico.  
 - **[Matplotlib](https://matplotlib.org/)** → grafici e visualizzazione immagini.
-
 
 ## 🔬 Metodologie e approcci
 - **Interferometria radio**: le visibilità complesse rappresentano i campioni della trasformata di Fourier dell’immagine celeste.  
@@ -71,13 +62,11 @@ L’obiettivo è passare dal **dominio delle visibilità** (piano u-v, ossia tra
 - **FFT inversa**: permette di passare dal piano u-v (Fourier) al piano immagine.  
 - **Upscaling bicubico**: utile per la presentazione, senza introdurre nuova informazione scientifica.  
 
-
 ## 📊 Output attesi
 - Range delle baseline in unità di lunghezza d’onda.  
 - Visualizzazione del piano u-v interpolato.  
 - Ricostruzione dell’immagine di M87 (scala logaritmica consigliata per contrastare le forti dinamiche).  
 - Zoom ad alta risoluzione per evidenziare i dettagli.  
-
 
 ## 🚀 Possibili estensioni
 - Applicazione di algoritmi avanzati di **deconvoluzione CLEAN**.  
