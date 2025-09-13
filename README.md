@@ -145,8 +145,7 @@ Esa Archive Explorer: https://hst.esac.esa.int/hcv-explorer/ ---> cerca il piane
 NASA/HEASARC SkyView: This service offers FITS files and is easy to navigate. Just enter "M87" in the search box and you'll be able to download the FITS file from the results page. This can be accessed at NASA SkyView​-----> Ho scaricato M87 non corrotto e funzionante
 
 ---------------------------------------------------------------------------------------
-### TESI DI LAUREA: Classificazione_spettrale_delle_stelle
-https://amslaurea.unibo.it/19482/1/Classificazione_spettrale_delle_stelle_Prandi_Riccardo.pdf
+TESI DI LAUREA: Classificazione_spettrale_delle_stelle : https://amslaurea.unibo.it/19482/1/Classificazione_spettrale_delle_stelle_Prandi_Riccardo.pdf
 -----------------------------------------------------------------------------------------
 ## Dati Spettrali
 Ecco una tabella dei dati spettrali degli elementi della tavola periodica che può esserti utile:
@@ -179,15 +178,12 @@ Current total database holdings are summarized here.
 -------------------------------------------------------------------------------------------
 ## Classificazione in base allo Redshift delle stelle: 
 
-Definire prima cosa è lo Redshift , la formula , poi capire come utilizzarlo per un eventuale classificazione. Trova un database valido , tipo della Nasa , ovviamente. Sito Download  DESI-EDR to Redshift : 
-
-https://help.desi.lbl.gov/index.php?qa=8&qa_1=accessing-desi-edr-redshift-and-spectra-using-list-of-and-dec , devi inscriverti su troppi siti del cazzoo.
-desihub--> sito ufficile per poter trovare materiale
-specpod-db--> https://github.com/desihub/specprod-db
-doc official --> https://specprod-db.readthedocs.io/_/downloads/en/stable/pdf/
-
+Definire prima cosa è lo Redshift , la formula , poi capire come utilizzarlo per un eventuale classificazione. Trova un database valido , tipo della Nasa , ovviamente. 
+- Sito Download  DESI-EDR to Redshift : https://help.desi.lbl.gov/index.php?qa=8&qa_1=accessing-desi-edr-redshift-and-spectra-using-list-of-and-dec , devi inscriverti su troppi siti del cazzoo.
+- desihub--> sito ufficile per poter trovare materiale
+- specpod-db--> https://github.com/desihub/specprod-db
+- doc official --> https://specprod-db.readthedocs.io/_/downloads/en/stable/pdf/
 oss: Prima di lavorare con il db esegui le seguenti operazioni:
-
 1.Installa Jupiter notebook , per lavorare direttamente con i file locali
 2.Configura l'enviroment chiamato env, questo contiene le librerie , può essere legato a solo un progetto o a tutti. Molto simili all'env di Anaconda. Solo che 	bisogna stare attenti nel configurazione!!
 3.Scarica Postgres , per il progetto l'unico modo è usare questo gestore per il database. 
