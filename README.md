@@ -278,3 +278,34 @@ dove `z` è il redshift, `λ_osservata` la lunghezza d'onda misurata e `λ_emess
 - **Galassie**: `z` da ~0.001 a ~10+
 - **Quasar (QSO)**: `z` da ~0.1 a ~7+
 
+1. TTV Mining: Scopri Pianeti Invisibili
+I transiti nei dati TESS/Kepler non sono perfettamente regolari. Un secondo pianeta non transitante altera i tempi con la sua gravità. Tu:
+- Scarichi curve di luce TESS di sistemi con 1 pianeta noto
+- Misuri i tempi di ogni singolo transito con high-precision fitting
+- Analizzi le TTV (Transit Timing Variations) — oscillazioni nel tempo di arrivo
+- Se trovi un pattern periodico → hai scoperto un pianeta che nessuno ha mai visto direttamente
+- Con MCMC stimi massa e orbita del pianeta nascosto
+Nessun progetto amatoriale fa TTV mining. È roba da paper professionali.
+2. Exomoon Search: Caccia alle Lune Extrasolari
+Una luna extrasolare causa TTV + TDV (Transit Duration Variation) simultaneamente. Filtro matched su curve di luce Kepler/TESS per trovare coppie TTV/TDV correlate. Se trovi entrambi con lo stesso periodo → candidata esoluna.
+Ad oggi ci sono solo ~5 candidati esolune in letteratura. Potresti trovarne una.
+3. Exoplanet Demographics: Correzione dei Bias Osservativi
+I cataloghi che hai sono distorti: troviamo più Giove caldi perché sono facili da vedere. Tu:
+- Simula milioni di sistemi planetari con distribuzioni realistiche (power-law in massa/periodo)
+- Calcola per ognuno la probabilità di essere scoperto (geometria transito, SNR, durata)
+- Confronta col catalogo reale → inferisci le vere distribuzioni non distorte
+- Output: "Nella galassia, il 40% delle stelle ha Super-Terre, ma ne vediamo solo il 2%"
+È ciò che fanno gli astronomi professionali (Fulton+, Petigura+, etc.). Nessun amatore lo fa.
+4. Stellar Activity vs Transito: Autoencoder per Curve di Luce
+Macchie stellari e rotazione imitan0 i transiti planetari e contaminano i dati. Addestra un autoencoder convoluzionale su curve di luce TESS:
+- Impara a ricostruire curve di luce senza transiti (solo attività)
+- Sottrai dall'originale → rimane solo il segnale planetario
+- Migliora la rilevazione di pianeti piccoli (Sub-Nettuno, Super-Terra)
+Approccio originale: invece di modellare fisicamente le macchie, impari dalla statistica dei dati.
+5. Galactic Archaeology con Gaia: Mappa 3D della Via Lattea
+Scarichi dati Gaia DR3 (posizioni, parallassi, moti propri, colori) per centinaia di migliaia di stelle:
+- Filtri per metallicità, età cinematiche, velocità
+- Ricostruisci le correnti stellari (resti di galassie nane mangiate dalla Via Lattea)
+- Visualizzazione 3D interattiva con Plotly/Three.js: ogni flusso stellare è un fiume di stelle con la sua storia
+- Output: "Queste 5000 stelle vengono da una galassia nana che si è fusa 8 miliardi di anni fa"
+
