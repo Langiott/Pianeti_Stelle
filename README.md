@@ -278,34 +278,86 @@ dove `z` è il redshift, `λ_osservata` la lunghezza d'onda misurata e `λ_emess
 - **Galassie**: `z` da ~0.001 a ~10+
 - **Quasar (QSO)**: `z` da ~0.1 a ~7+
 
-1. TTV Mining: Scopri Pianeti Invisibili
+---
+
+# Progetti di Analisi Dati Astronomici
+
+## 1. TTV Mining: Scopri Pianeti
+
 I transiti nei dati TESS/Kepler non sono perfettamente regolari. Un secondo pianeta non transitante altera i tempi con la sua gravità. Tu:
+
 - Scarichi curve di luce TESS di sistemi con 1 pianeta noto
 - Misuri i tempi di ogni singolo transito con high-precision fitting
 - Analizzi le TTV (Transit Timing Variations) — oscillazioni nel tempo di arrivo
-- Se trovi un pattern periodico → hai scoperto un pianeta che nessuno ha mai visto direttamente
+- Se trovi un pattern periodico → hai scoperto un pianeta che nessuno ha mai visto direttamente. su TESS c'è davvero spazio: molti sistemi con un solo pianeta noto hanno settori recenti mai analizzati per TTV. Il percorso realistico: lightkurve per scaricare/pulire le curve → fit di ogni transito con batman o exoplanet → serie O-C (Observed minus Calculated) → ricerca di periodicità → MCMC con emcee per il pianeta perturbatore. Sono 4-5 competenze nuove ma tutte apprendibili in sequenza. Prima però fai un fit di transito su un pianeta noto e facile — HD 209458 b, che guarda caso è proprio la stella che hai interrogato su SIMBAD nel notebook 011.
 - Con MCMC stimi massa e orbita del pianeta nascosto
-Nessun progetto amatoriale fa TTV mining. È roba da paper professionali.
-2. Exomoon Search: Caccia alle Lune Extrasolari
+
+## 2. Exomoon Search: Caccia alle Lune Extrasolari
+
 Una luna extrasolare causa TTV + TDV (Transit Duration Variation) simultaneamente. Filtro matched su curve di luce Kepler/TESS per trovare coppie TTV/TDV correlate. Se trovi entrambi con lo stesso periodo → candidata esoluna.
+
 Ad oggi ci sono solo ~5 candidati esolune in letteratura. Potresti trovarne una.
-3. Exoplanet Demographics: Correzione dei Bias Osservativi
+
+## 3. Exoplanet Demographics: Correzione dei Bias Osservativi
+
 I cataloghi che hai sono distorti: troviamo più Giove caldi perché sono facili da vedere. Tu:
+
 - Simula milioni di sistemi planetari con distribuzioni realistiche (power-law in massa/periodo)
 - Calcola per ognuno la probabilità di essere scoperto (geometria transito, SNR, durata)
 - Confronta col catalogo reale → inferisci le vere distribuzioni non distorte
 - Output: "Nella galassia, il 40% delle stelle ha Super-Terre, ma ne vediamo solo il 2%"
+
 È ciò che fanno gli astronomi professionali (Fulton+, Petigura+, etc.). Nessun amatore lo fa.
-4. Stellar Activity vs Transito: Autoencoder per Curve di Luce
+
+## 4. Stellar Activity vs Transito: Autoencoder per Curve di Luce
+
 Macchie stellari e rotazione imitan0 i transiti planetari e contaminano i dati. Addestra un autoencoder convoluzionale su curve di luce TESS:
+
 - Impara a ricostruire curve di luce senza transiti (solo attività)
 - Sottrai dall'originale → rimane solo il segnale planetario
 - Migliora la rilevazione di pianeti piccoli (Sub-Nettuno, Super-Terra)
+
 Approccio originale: invece di modellare fisicamente le macchie, impari dalla statistica dei dati.
-5. Galactic Archaeology con Gaia: Mappa 3D della Via Lattea
+
+## 5. Galactic Archaeology con Gaia: Mappa 3D della Via Lattea
+
 Scarichi dati Gaia DR3 (posizioni, parallassi, moti propri, colori) per centinaia di migliaia di stelle:
+
 - Filtri per metallicità, età cinematiche, velocità
 - Ricostruisci le correnti stellari (resti di galassie nane mangiate dalla Via Lattea)
 - Visualizzazione 3D interattiva con Plotly/Three.js: ogni flusso stellare è un fiume di stelle con la sua storia
 - Output: "Queste 5000 stelle vengono da una galassia nana che si è fusa 8 miliardi di anni fa"
 
+---
+
+## 1. Onde gravitazionali: rileva GW150914 dai dati grezzi LIGO
+
+I dati di tutti gli eventi sono pubblici (GWOSC) e la libreria gwpy è nello stile di astropy. Scarichi lo strain grezzo, applichi whitening e filtro passa-banda, e il "chirp" della fusione di due buchi neri emerge dal rumore. Poi fai matched filtering con template teorici — concettualmente identico alla cross-correlazione che hai già fatto nel notebook 014 con le firme NIST, solo nel dominio del tempo. Fattibilità alta, effetto "wow" massimo.
+
+## 2. La tensione di Hubble con le tue mani
+
+Questo è il progetto che collega due mondi che hai già toccato. Con il catalogo Pantheon+ (supernove Ia, pubblico) costruisci il diagramma di Hubble e misuri H₀ "locale" (~73 km/s/Mpc). Dal tuo spettro di potenza CMB del notebook 016 arriva invece il valore Planck (~67). La discrepanza è uno dei problemi aperti più caldi della cosmologia, e tu l'avresti riprodotta con dati reali da entrambi i lati. Nessun progetto amatoriale che io conosca fa le due misure insieme.
+
+## 3. Curve di rotazione galattiche e materia oscura
+
+Il database SPARC (175 galassie, pubblico, semplici file testo) contiene velocità di rotazione osservate vs raggio. Fai il fit con la sola materia visibile → non torna; aggiungi un alone di materia oscura (profilo NFW o isotermo) → torna. È la dimostrazione classica dell'esistenza della materia oscura, con scipy.optimize che già usi. Difficoltà bassa, valore didattico enorme.
+
+## 4. Morfologia galattica con CNN — dove le CNN hanno davvero senso
+
+Il tuo notebook 010 usava una CNN su dati tabellari (errore concettuale di cui abbiamo parlato). Il modo giusto di ripararlo: Galaxy Zoo ha centinaia di migliaia di immagini SDSS classificate da volontari (spirale/ellittica/merger). Una CNN 2D su immagini è l'uso corretto dello strumento, il dataset è bilanciato e etichettato, e impari transfer learning. È il progetto che sistema le tue fondamenta ML meglio di qualsiasi tutorial.
+
+## 5. Retrieval atmosferico di K2-18b con petitRADTRANS
+
+La continuazione seria del tuo 015: invece di gaussiane e NNLS, usi un codice di trasferimento radiativo professionale che genera spettri di trasmissione da parametri fisici (abbondanze, temperatura, nubi), e con MCMC (emcee) inferisci le abbondanze molecolari con barre d'errore. È letteralmente ciò che ha fatto Madhusudhan nel paper che citi. Difficoltà media-alta, ma sei già a metà strada.
+
+## 6. Fast Radio Burst: il catalogo CHIME
+
+~600 lampi radio da sorgenti in gran parte ignote, catalogo pubblico in CSV. Analizzi la misura di dispersione (DM) — il ritardo del segnale in frequenza causato dagli elettroni lungo il percorso — e da lì stimi le distanze, cerchi repeater, studi la distribuzione nel cielo. È un campo così giovane (primo FRB: 2007) che analisi anche semplici toccano domande aperte. Solo pandas e matplotlib, che padroneggi già.
+
+## 7. Epoch folding di una pulsar
+
+Dati radio grezzi di una pulsar brillante (es. B0329+54, disponibili da vari archivi): nel rumore non vedi nulla, ma "ripiegando" il segnale sul periodo giusto (~0.714 s) l'impulso emerge nitido. Trovare il periodo alla cieca con una ricerca su griglia + statistica χ² è un esercizio bellissimo di analisi del segnale, ed è la base di come furono scoperte le pulsar nel 1967.
+
+## 8. Progetto: "WASP-39b con JWST — dal transito allo spettro di trasmissione"
+
+Riprodurre la prima rilevazione di CO₂ in un'atmosfera esoplanetaria dai dati JWST veri. È il progetto che salda tutto il tuo filone spettroscopico (notebook 013→015) a dati di livello professionale, e ha un vantaggio raro: il risultato atteso è pubblicato su Nature, quindi puoi verificare ogni tuo passaggio. WASP-39b è un Saturno caldo gonfio attorno a una stella brillante: il segnale atmosferico è enorme (~1000 ppm, contro i ~50-100 ppm di K2-18b). Significa che la CO₂ si vede a occhio se il processing è corretto — il progetto è difficile nel metodo, non nella sensibilità. È il target didattico perfetto.
