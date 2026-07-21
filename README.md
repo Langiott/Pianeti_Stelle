@@ -187,6 +187,12 @@ Processamento della mappa CMB **Planck SMICA** (NSIDE=2048, ~50M pixel) con `hea
 |----------|-----------|
 | `016_CMB_Anomalie.ipynb` | Analisi CMB Planck SMICA: mappa, spettro di potenza, anomalie |
 
+### Scripts - Buchi neri
+
+| Notebook | Argomento |
+|----------|-----------|
+| [`022.2_Buco_Nero_3D_Interattivo_Colab.ipynb`](Scripts/022.2_Buco_Nero_3D_Interattivo_Colab.ipynb) | Laboratorio 3D interattivo: Kerr, disco di accrescimento e lensing |
+
 ### Scripts - Redshift
 
 | Notebook | Argomento |
